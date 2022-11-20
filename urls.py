@@ -27,11 +27,12 @@ admin.site.site_header = "Furniture Store Admin"
 admin.site.site_title = "Furniture Store Admin Portal"
 admin.site.index_title = "Welcome to Furniture Store Admin"
 
-urlpatterns =[
+urlpatterns = [
 
-    path('admin/', admin.site.urls),
-    path('', include('store.urls')),
-    
-    url(r '^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
- ] 
+path('admin/', admin.site.urls),
+path('', include('store.urls'))
+
+url(r '^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+]
+            
 urlpatterns=urlpatterns+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
